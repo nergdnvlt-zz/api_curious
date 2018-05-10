@@ -1,7 +1,7 @@
 class GithubUserService
-  def initialize(username, token=nil)
+  def initialize(username, current_user)
+    @current_user = current_user
     @username = username
-    @token = token
     @client_id = ENV['client_id']
     @client_secret = ENV['client_secret']
   end
@@ -13,12 +13,16 @@ class GithubUserService
   private
 
   def faraday_get
-    Faraday.new(url: "https://api.github.com/users/#{@username}?client_id=#{@client_id}&client_secret=#{@client_secret}")
+    if @current_user.username == @username
+      Faraday.new(url: 'https://api.github.com/user')
+    else
+      Faraday.new(url: "https://api.github.com/users/#{@username}?client_id=#{@client_id}&client_secret=#{@client_secret}")
+    end
   end
 
   def request
     faraday_get.get do |req|
-      req.headers['Authorization'] = @token
+      req.headers['Authorization'] = "token #{@current_user.oauth_token}"
     end
   end
 
