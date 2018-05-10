@@ -1,5 +1,40 @@
-<section class="bio_info">
-  <%= image_tag @github_profile.profile.picture %>
-  <%= @github_profile.profile.name %>
-  <%= @github_profile.profile.username %>
-</section>
+<div class='show_body'>
+  <section class="bio_info">
+
+    <div class="pic">
+      <%= image_tag @github_profile.profile.picture %>
+    </div>
+
+    <div class="name">
+      <p>Name: <%= @github_profile.profile.name %></p>
+    </div>
+
+    <div class="username">
+      <p>Username: <%= @github_profile.profile.username %></p>
+    </div>
+
+    <div class="email">
+      <p>Email: <%= @github_profile.profile.email %></p>
+    </div>
+
+    <div class="location">
+      <p>Location: <%= @github_profile.profile.location %></p>
+    </div>
+
+    <div class="bio">
+      <p>Bio: <%= @github_profile.profile.bio %></p>
+    </div>
+
+    <div class="followers">
+      <p>Followers: <%= @github_profile.profile.followers %></p>
+    </div>
+
+    <div class="following">
+      <p>Following: <%= @github_profile.profile.following %></p>
+    </div>
+
+    <div class="public_repos">
+      <p>Repos: <%= @github_profile.profile.public_repos %></p>
+    </div>
+  </section>
+</div>

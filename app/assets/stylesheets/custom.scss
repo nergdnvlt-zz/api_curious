@@ -1,0 +1,41 @@
+.nav {
+  background-color: black;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  h1 {
+    margin-left: 45px;
+    color: white;
+  }
+  a {
+      color: #D1D6D7;
+      text-decoration: none;
+      margin-right: 25px;
+    }
+}
+
+.main-welcome {
+  display: flex;
+  width: 100%;
+  margin-top: 100px;
+  justify-content: center;
+}
+
+.welcome-card {
+  h1 {
+    font-size: 20px;
+  }
+  a {
+    margin-left: 14px;
+    align-self: center;
+  }
+}
+
+.show_body {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 25px;
+}
