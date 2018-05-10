@@ -1,6 +1,6 @@
 class GithubProfilesController < ApplicationController
   def show
-    @github_profile ||= GithubUserService.new(params[:username], session['token'])
+    @github_profile ||= GithubUserService.new(params[:username], current_user.oauth_token)
   end
 
   # def show
