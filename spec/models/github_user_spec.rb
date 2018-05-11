@@ -8,7 +8,7 @@ describe GithubUser do
         login: 'FatherWar',
         avatar_url: 'https://avatars1.githubusercontent.com/u/33960735?v=4' }
       }
-    subject { GithubUser.new(attributes) }
+    subject { GithubUser.new(attributes, nil) }
 
     it 'exists with valid attributes' do
       expect(subject.name).to eq('Thor')

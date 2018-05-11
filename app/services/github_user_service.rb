@@ -7,7 +7,7 @@ class GithubUserService
   end
 
   def profile
-    @profile = GithubUser.new(raw_profile)
+    @profile = GithubUser.new(raw_profile, @username)
   end
 
   private
