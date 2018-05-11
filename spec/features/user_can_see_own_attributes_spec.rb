@@ -40,4 +40,30 @@ feature 'user can see a profile' do
       expect(page).to have_content('35')
     end
   end
+
+  scenario 'see another persons public account info' do
+      visit '/'
+
+      click_on 'Login With Github'
+      expect(current_path).to eq(root_path)
+
+      visit '/shniks'
+      expect(current_path).to eq('/shniks')
+
+      expect(page).to have_css('.pic')
+
+      expect(page).to have_css('.name')
+      expect(page).to have_content('Nikhil')
+
+      expect(page).to have_css('.username')
+      expect(page).to have_content('Shniks')
+
+      expect(page).to have_css('.email')
+      expect(page).to have_css('.location')
+      expect(page).to have_css('.bio')
+      expect(page).to have_css('.followers')
+      expect(page).to have_css('.following')
+      expect(page).to have_css('.public_repos')
+    end
+  end
 end
