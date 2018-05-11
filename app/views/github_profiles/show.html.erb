@@ -6,37 +6,53 @@
     </div>
 
     <div class="bio-text">
-      <div class="name">
-        <p>Name: <%= @github_profile.name %></p>
-      </div>
+      <table>
 
-      <div class="username">
-        <p>Username: <%= @github_profile.username %></p>
-      </div>
+        <tr>
+          <th class='info'></th>
+          <th class='info'></th>
+        </tr>
 
-      <div class="email">
-        <p>Email: <%= @github_profile.email %></p>
-      </div>
+        <tr class="name">
+          <td class='info-h'>Name </td>
+          <td class='info'><%= @github_profile.name %></td>
+        </tr>
 
-      <div class="location">
-        <p>Location: <%= @github_profile.location %></p>
-      </div>
+        <tr class="username">
+          <td class='info-h'>Username </td>
+          <td class='info'><%= @github_profile.username %></td>
+        </tr>
 
-      <div class="bio">
-        <p>Bio: <%= @github_profile.bio %></p>
-      </div>
+        <tr class="email">
+          <td class='info-h'>Email</td>
+          <td class='info'><%= @github_profile.email %></td>
+        </tr>
 
-      <div class="followers">
-        <p>Followers: <%= @github_profile.followers %></p>
-      </div>
+        <tr class="location">
+          <td class='info-h'>Location</td>
+          <td class='info'><%= @github_profile.location %></td>
+        </tr>
 
-      <div class="following">
-        <p>Following: <%= @github_profile.following %></p>
-      </div>
+        <tr class="bio">
+          <td class='info-h'>Bio</td>
+          <td class='info'><%= @github_profile.bio %></td>
+        </tr>
 
-      <div class="public_repos">
-        <p>Repos: <%= @github_profile.public_repos %></p>
-      </div>
+        <tr class="followers">
+          <td class='info-h'>Followers</td>
+          <td class='info'><%= @github_profile.followers %></td>
+        </tr>
+
+        <tr class="following">
+          <td class='info-h'>Following</td>
+          <td class='info'><%= @github_profile.following %></td>
+        </tr>
+
+        <tr class="public_repos">
+          <td class='info-h'>Repos</td>
+          <td class='info'><%= @github_profile.public_repos %></td>
+        </tr>
+      </table>
     </div>
   </section>
 
@@ -45,7 +61,7 @@
       <div class='repo'>
 
         <div class='repo_item'>
-          REPO: <%= link_to "#{repo.name}", repo.link %>
+          REPO<%= link_to "#{repo.name}", repo.link %>
         </div>
 
         <div class='repo_item'>

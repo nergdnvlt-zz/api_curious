@@ -2,6 +2,8 @@ class GithubRepoService
 
   def initialize(username)
     @username = username
+    @client_id = ENV['client_id']
+    @client_secret = ENV['client_secret']
   end
 
   def repos
@@ -13,7 +15,7 @@ class GithubRepoService
   private
 
   def get_repo
-    Faraday.new(url: "https://api.github.com/users/#{@username}/repos")
+    Faraday.new(url: "https://api.github.com/users/#{@username}/repos?client_id=#{@client_id}&client_secret=#{@client_secret}")
   end
 
   def repo_response
