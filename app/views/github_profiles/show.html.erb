@@ -37,4 +37,13 @@
       <p>Repos: <%= @github_profile.public_repos %></p>
     </div>
   </section>
+
+  <section class='main_repos'>
+    <% @github_profile.repos.each do |repo| %>
+      <div class='repo'>
+        <%= link_to "#{repo.name}", repo.link %>
+        <%= repo.language %>
+      </div>
+    <% end %>
+  </section>
 </div>

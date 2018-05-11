@@ -42,6 +42,7 @@ feature 'user can see a profile' do
   end
 
   scenario 'see another persons public account info' do
+    VCR.use_cassette('features/user_can_see_another_profile') do
       visit '/'
 
       click_on 'Login With Github'
