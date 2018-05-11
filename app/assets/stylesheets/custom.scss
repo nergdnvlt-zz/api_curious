@@ -1,5 +1,11 @@
+body {
+  background-color: #F4F4F4;
+  font-family: 'Abel', sans-serif;
+  letter-spacing: 1px;
+}
+
 .nav {
-  background-color: black;
+  background-color: #B56357;
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -8,6 +14,7 @@
   h1 {
     margin-left: 45px;
     color: white;
+    font-size: 20px;
   }
   a {
       color: #D1D6D7;
@@ -35,7 +42,52 @@
 
 .show_body {
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   margin-top: 25px;
+  a {
+    color: #B56357;
+  }
+}
+
+.bio_info {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pic {
+  margin: 45px;
+}
+
+.bio-text {
+  margin: 45px;
+  width: 33%;
+}
+
+.main_repos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.repo {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 4px #A7B3A5 solid;
+  height: 100px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.repo_item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  a {
+    text-decoration: none;
+  }
 }

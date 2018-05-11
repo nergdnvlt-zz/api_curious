@@ -1,48 +1,57 @@
 <div class='show_body'>
-  <section class="bio_info">
 
+  <section class="bio_info">
     <div class="pic">
       <%= image_tag @github_profile.picture %>
     </div>
 
-    <div class="name">
-      <p>Name: <%= @github_profile.name %></p>
-    </div>
+    <div class="bio-text">
+      <div class="name">
+        <p>Name: <%= @github_profile.name %></p>
+      </div>
 
-    <div class="username">
-      <p>Username: <%= @github_profile.username %></p>
-    </div>
+      <div class="username">
+        <p>Username: <%= @github_profile.username %></p>
+      </div>
 
-    <div class="email">
-      <p>Email: <%= @github_profile.email %></p>
-    </div>
+      <div class="email">
+        <p>Email: <%= @github_profile.email %></p>
+      </div>
 
-    <div class="location">
-      <p>Location: <%= @github_profile.location %></p>
-    </div>
+      <div class="location">
+        <p>Location: <%= @github_profile.location %></p>
+      </div>
 
-    <div class="bio">
-      <p>Bio: <%= @github_profile.bio %></p>
-    </div>
+      <div class="bio">
+        <p>Bio: <%= @github_profile.bio %></p>
+      </div>
 
-    <div class="followers">
-      <p>Followers: <%= @github_profile.followers %></p>
-    </div>
+      <div class="followers">
+        <p>Followers: <%= @github_profile.followers %></p>
+      </div>
 
-    <div class="following">
-      <p>Following: <%= @github_profile.following %></p>
-    </div>
+      <div class="following">
+        <p>Following: <%= @github_profile.following %></p>
+      </div>
 
-    <div class="public_repos">
-      <p>Repos: <%= @github_profile.public_repos %></p>
+      <div class="public_repos">
+        <p>Repos: <%= @github_profile.public_repos %></p>
+      </div>
     </div>
   </section>
 
   <section class='main_repos'>
     <% @github_profile.repos.each do |repo| %>
       <div class='repo'>
-        <%= link_to "#{repo.name}", repo.link %>
-        <%= repo.language %>
+
+        <div class='repo_item'>
+          REPO: <%= link_to "#{repo.name}", repo.link %>
+        </div>
+
+        <div class='repo_item'>
+          <p>Language: <%= repo.language %></p>
+        </div>
+
       </div>
     <% end %>
   </section>
