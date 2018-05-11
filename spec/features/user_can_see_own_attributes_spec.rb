@@ -4,13 +4,16 @@ require './spec/support/omniauth'
 feature 'user can see a profile' do
   scenario 'see basic account info' do
     VCR.use_cassette('features/user_can_see_own_attributes') do
+      user = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
       # When I visit a userpage
       visit '/'
 
-      click_on 'Login With Github'
+      # click_on 'Login With Github'
       expect(current_path).to eq(root_path)
 
-      click_on 'Profile'
+      click_on 'Visit Your Profile Here'
       expect(current_path).to eq('/nergdnvlt')
 
       # I can see my profile pic, number of starred repo's, followers and who I'm following
@@ -43,9 +46,11 @@ feature 'user can see a profile' do
 
   scenario 'see another persons public account info' do
     VCR.use_cassette('features/user_can_see_another_profile') do
+      user = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit '/'
 
-      click_on 'Login With Github'
+      # click_on 'Login With Github'
       expect(current_path).to eq(root_path)
 
       visit '/shniks'
